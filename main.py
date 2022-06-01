@@ -14,15 +14,15 @@ def generate(count, maxnum, goal, placement = 1):
     while number != goal:
         count+=1
         number = search(count,maxnum,placement)
-    return count - 1
+    return count
 
 def main():
     file = open("seeds.txt","r")
     count = int(file.readlines()[-1])
     file.close()
     file = open("seeds.txt","a+")
-    for i in range(300):
-        count = generate(count+2,100000,72727,1)
+    for i in range(10000):
+        count = generate(count+1,100000,72727,1)
         print(count)
         file.write(str(count)+"\n")
 
