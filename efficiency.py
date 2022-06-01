@@ -1,4 +1,4 @@
-# A more efficient seed searcher tailored for 72727 on the first try
+# Hello World: My Version
 from random import randint, seed
 
 file = open("seeds.txt","r")
@@ -18,5 +18,6 @@ def generate():
 file = open("seeds.txt","a+")
 for i in range(10000):
     count+=1
-    print(count)
+    generate()
+    print(i+1,"\t",count)
     file.write(str(count)+"\n")
